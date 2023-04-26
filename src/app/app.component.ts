@@ -7,7 +7,7 @@ import { Router } from '@angular/router';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit{
-  title = 'sureservice2023';
+  title = 'sureservice';
   classToggled=false;
   topBarDisplay=false;
   sideNav=document.getElementById('sideNav') as any;
@@ -69,6 +69,9 @@ export class AppComponent implements OnInit{
       this.open=false;
       this.classToggled=true;
     } 
-    else this.classToggled=false;
+    else {
+      this.open=true;
+      this.classToggled=false;
+    } 
   }
 }

@@ -13,10 +13,16 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
+import { AuthComponent } from './auth/pages/auth/auth.component';
+import { LoginComponent } from './auth/pages/auth/login/login.component';
+import { RegisterComponent } from './auth/pages/auth/register/register.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AuthComponent,
+    LoginComponent,
+    RegisterComponent
   ],
   imports: [
     BrowserModule,

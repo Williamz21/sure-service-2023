@@ -1,10 +1,10 @@
-<div class="topBar" *ngIf="(router.url !== '/login' && router.url !== '/register')">
+<div class="topBar" *ngIf="(router.url !== '/auth/login' && router.url !== '/auth/register')">
     <button mat-mini-fab color="success" aria-label="Toggle sidebar" (click)="toggleBarMobile()">
         <mat-icon>menu</mat-icon>
     </button>
 </div>
 <div id="sideNav" class="sideNav" [class.close]="classToggled" [class.topBarDisplay]="topBarDisplay"
-    *ngIf="(router.url !== '/login' && router.url !== '/register')">
+    *ngIf="(router.url !== '/auth/login' && router.url !== '/auth/register')">
     <div class="header">
         <img class="logo" src="../assets/favicon.png" alt="Logo of SureService">
         <h1>SureService</h1>
@@ -54,7 +54,7 @@
 
     <div class="navLinks bottom">
         <div class="nav">
-            <div class="link" [routerLink]="'/login'">
+            <div class="link" [routerLink]="'/auth/login'">
                 <mat-icon>logout</mat-icon>
                 <h2>Log-out</h2>
             </div>
