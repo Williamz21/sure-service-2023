@@ -1,0 +1,61 @@
+<div class="page">
+    <div class="left-side">
+        <img id="logo" class="logo" src="../../../../assets/register.svg" alt="Image of the logo">
+
+        <h1>Welcome to SureService</h1>
+
+        <p>The best way to contact with clients and technicians</p>
+
+        <h4 class="button button2" [routerLink]="'/auth/login'">Login</h4>
+    </div>
+
+    <div class="container">
+        <form class="form">
+            <img class="loginprofile" src="../../../../assets/undraw_pic_profile_re_7g2h.svg" alt="Image of a profile">
+            <h1>Sign up to SureService</h1>
+
+            <div class="formField">
+                <mat-form-field appearance="outline">
+                    <mat-label>Name</mat-label>
+                    <input matInput>
+                    <mat-icon matIconSuffix>person</mat-icon>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Email</mat-label>
+                    <input matInput>
+                    <mat-icon matIconSuffix>alternate_email</mat-icon>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Last Name</mat-label>
+                    <input matInput>
+                    <mat-icon matIconSuffix>person</mat-icon>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Number</mat-label>
+                    <input matInput>
+                    <mat-icon matIconSuffix>phone_android</mat-icon>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Password</mat-label>
+                    <input matInput [type]="hide ? 'password' : 'text'" autocomplete="off">
+                    <mat-icon matIconSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </mat-form-field>
+
+                <mat-form-field appearance="outline">
+                    <mat-label>Confirm Password</mat-label>
+                    <input matInput [type]="hide ? 'password' : 'text'" autocomplete="off">
+                    <mat-icon matIconSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </mat-form-field>
+            </div>
+
+            <h4 class="button">Create account</h4>
+
+            <p class="goregister">Already have an account? Login <span [routerLink]="'/auth/login'">here!</span></p>
+        </form>
+
+    </div>
+</div>
