@@ -3,6 +3,10 @@
 
 /*right*/
 
+.form .button{
+    width: 70%;
+}
+
 .logo {
     width: 20rem;
     height: 20rem;
@@ -81,6 +85,10 @@
 @media (max-width: 850px) {
     .form h1 {
         font-size: 2rem;
+    }
+
+    .form .button{
+        width: 40%;
     }
 
     .formField {

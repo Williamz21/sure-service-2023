@@ -43,16 +43,16 @@
         text-align: center;
     }
 
+    .button{
+        width: 100%;
+    }
+
     mat-form-field:hover {
         color: $secondaryFont;
     }
 
-    mat-form-field,.button {
-        width: 100%;
-
-        mat-icon:hover {
-            cursor: pointer;
-        }
+    mat-form-field mat-icon:hover {
+        cursor: pointer;
     }
 }
 
@@ -71,11 +71,7 @@
         -moz-transform: scale(1.07);
         -ms-transform: scale(1.07);
         -o-transform: scale(1.07);
-        transition: all ease-out 0.3s;
-        -webkit-transition: all ease-out 0.3s;
-        -moz-transition: all ease-out 0.3s;
-        -ms-transition: all ease-out 0.3s;
-        -o-transition: all ease-out 0.3s;
+        @include transition;
     }
 }
 

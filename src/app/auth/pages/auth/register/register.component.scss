@@ -32,12 +32,18 @@
         width: 80%;
         height: 80%;
     }
+
+    .form .button{
+        width: 40%;
+    }
 }
 
 @media (max-width: 850px) {
-    .form h1 {
-        font-size: 2rem;
-    }
+    .form{
+        h1 {
+            font-size: 2rem;
+        }
+    } 
 
     .formField {
         grid-template-columns: repeat(1, 1fr);
