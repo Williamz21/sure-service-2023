@@ -1,0 +1,13 @@
+$mainFont: #3F51B5;
+$secondaryFont: #1f3ad6;
+$button: #1537F2;
+$white: #ffffff;
+$colorMain: rgba(21, 55, 242, 1);
+
+@mixin transition {
+    transition: all ease-out 0.3s;
+    -webkit-transition: all ease-out 0.3s;
+    -moz-transition: all ease-out 0.3s;
+    -ms-transition: all ease-out 0.3s;
+    -o-transition: all ease-out 0.3s;
+}
