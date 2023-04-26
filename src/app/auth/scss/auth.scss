@@ -1,0 +1,149 @@
+@import '../../../global/colors.scss';
+
+.page {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(0, 166, 255, 1) 0%, rgba(49, 76, 228, 1) 50%, rgba(21, 55, 242, 1) 100%);
+    box-sizing: border-box;
+    overflow: auto
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    margin: 0 auto;
+    height: 80%;
+    box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.37);
+    background-color: rgba(255, 255, 255, 1);
+    border-radius: 10%;
+    -webkit-border-radius: 10%;
+    -moz-border-radius: 10%;
+    -ms-border-radius: 10%;
+    -o-border-radius: 10%;
+    box-sizing: border-box;
+    overflow: auto
+}
+
+/*right*/
+
+.form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 0;
+
+    h1{
+        font-size: 3rem;
+        margin: 0 0 2rem 0;
+        text-align: center;
+    }
+
+    mat-form-field:hover {
+        color: $secondaryFont;
+    }
+
+    mat-form-field,.button {
+        width: 100%;
+
+        mat-icon:hover {
+            cursor: pointer;
+        }
+    }
+}
+
+.loginprofile {
+    width: 8rem;
+}
+
+
+.loginprofile,
+.logo {
+    @include transition;
+
+    &:hover{
+        transform: scale(1.07);
+        -webkit-transform: scale(1.07);
+        -moz-transform: scale(1.07);
+        -ms-transform: scale(1.07);
+        -o-transform: scale(1.07);
+        transition: all ease-out 0.3s;
+        -webkit-transition: all ease-out 0.3s;
+        -moz-transition: all ease-out 0.3s;
+        -ms-transition: all ease-out 0.3s;
+        -o-transition: all ease-out 0.3s;
+    }
+}
+
+/*register */
+.goregister {
+    span{
+        font-weight: 700;
+        text-decoration: underline;
+        &:hover{
+            cursor: pointer;
+            color: $secondaryFont;
+        }
+    }
+}
+
+/*BUTTON*/
+
+.button {
+    width: 40%;
+    text-align: center;
+    background-color: $mainFont;
+    margin: 0;
+    color: #ffffff;
+    padding: 1rem 0;
+    border-radius: 20px;
+    -webkit-border-radius: 20px;
+    -moz-border-radius: 20px;
+    -ms-border-radius: 20px;
+    -o-border-radius: 20px;
+    @include transition;
+    cursor: pointer;
+
+    &:hover {
+        background-color: $secondaryFont;
+        transform: scale(1.1);
+        -webkit-transform: scale(1.1);
+        -moz-transform: scale(1.1);
+        -ms-transform: scale(1.1);
+        -o-transform: scale(1.1);
+        @include transition;
+    }
+}
+
+.button2 {
+    background-color: #ffffff;
+    color: #000;
+
+    &:hover {
+        background-color: #ffffff;
+    }
+}
+
+/*left*/
+
+.left-side {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0 auto;
+    color: $white;
+    text-align: center;
+
+    h1{
+        font-size: 3rem;
+        margin: 0;
+    }
+
+    p{
+        font-size: 1.3rem;
+    }
+}
