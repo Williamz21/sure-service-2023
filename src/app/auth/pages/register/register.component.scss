@@ -1,5 +1,5 @@
-@import '../../../../../global/colors.scss';
-@import '../../../scss/auth.scss';
+@import '../../../../global/colors';
+@import '../../scss/auth';
 
 /*right*/
 
@@ -43,7 +43,7 @@
         h1 {
             font-size: 2rem;
         }
-    } 
+    }
 
     .formField {
         grid-template-columns: repeat(1, 1fr);
