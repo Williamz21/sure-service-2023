@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from "@angular/forms";
-import {passwordValidation} from "../../shared/ts/passwordValidation";
+
 
 @Component({
   selector: 'app-register',
@@ -18,7 +18,7 @@ export class RegisterComponent {
       Validators.required,
       Validators.pattern(/^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{6,}$/)]
     ],
-    confirmPassword: ['', [Validators.required, passwordValidation]],
+    confirmPassword: ['', [Validators.required]],
     number: ['', [Validators.required,
       Validators.minLength(7),
       Validators.maxLength(7),
