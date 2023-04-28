@@ -10,45 +10,81 @@
     </div>
 
     <div class="container">
-        <form class="form">
+        <form class="form" [formGroup]="registerForm">
             <img class="loginprofile" src="../../../../assets/undraw_pic_profile_re_7g2h.svg" alt="Image of a profile">
             <h1>Sign up to SureService</h1>
 
             <div class="formField">
                 <mat-form-field appearance="outline">
                     <mat-label>Name</mat-label>
-                    <input matInput>
+                    <input matInput formControlName="name" required>
                     <mat-icon matIconSuffix>person</mat-icon>
+                    <mat-error *ngIf="name?.errors?.['required']">
+                      Name is required
+                    </mat-error>
+                    <mat-error *ngIf="name?.errors?.['maxlength']">
+                      Name must be valid
+                    </mat-error>
                 </mat-form-field>
 
                 <mat-form-field appearance="outline">
                     <mat-label>Email</mat-label>
-                    <input matInput>
+                    <input matInput formControlName="email" required>
                     <mat-icon matIconSuffix>alternate_email</mat-icon>
+                    <mat-error *ngIf="email?.errors?.['required']">
+                      Email is required
+                    </mat-error>
+                    <mat-error *ngIf="email?.errors?.['email']">
+                      Email must be valid
+                    </mat-error>
                 </mat-form-field>
 
                 <mat-form-field appearance="outline">
                     <mat-label>Last Name</mat-label>
-                    <input matInput>
+                    <input matInput formControlName="lastName" required>
                     <mat-icon matIconSuffix>person</mat-icon>
+                    <mat-error *ngIf="lastName?.errors?.['required']">
+                      Last Name is required
+                    </mat-error>
+                    <mat-error *ngIf="lastName?.errors?.['maxlength']">
+                      Last Name must be valid
+                    </mat-error>
                 </mat-form-field>
 
                 <mat-form-field appearance="outline">
                     <mat-label>Number</mat-label>
-                    <input matInput>
+                    <input matInput type="number" formControlName="number" required>
                     <mat-icon matIconSuffix>phone_android</mat-icon>
+                    <mat-error *ngIf="number?.errors?.['required']">
+                      Number is required
+                    </mat-error>
+                    <mat-error *ngIf="number?.errors?.['pattern']">
+                      Number must be valid
+                    </mat-error>
                 </mat-form-field>
 
                 <mat-form-field appearance="outline">
                     <mat-label>Password</mat-label>
-                    <input matInput [type]="hide ? 'password' : 'text'" autocomplete="off">
+                    <input matInput [type]="hide ? 'password' : 'text'" autocomplete="off" formControlName="password" required>
                     <mat-icon matIconSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    <mat-error *ngIf="password?.errors?.['required']">
+                      Password is required
+                    </mat-error>
+                    <mat-error *ngIf="password?.errors?.['pattern']">
+                      Number and symbol required
+                    </mat-error>
                 </mat-form-field>
 
                 <mat-form-field appearance="outline">
                     <mat-label>Confirm Password</mat-label>
-                    <input matInput [type]="hide ? 'password' : 'text'" autocomplete="off">
+                    <input matInput [type]="hide ? 'password' : 'text'" autocomplete="off" formControlName="confirmPassword" required>
                     <mat-icon matIconSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                    <mat-error *ngIf="confirmPassword?.errors?.['required']">
+                      Password is required
+                    </mat-error>
+                    <mat-error *ngIf="confirmPassword.errors?.['confirmedValidator']">
+                      Passwords doesn't match
+                    </mat-error>
                 </mat-form-field>
             </div>
 

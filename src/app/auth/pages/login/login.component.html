@@ -1,21 +1,30 @@
 <div class="page">
     <div class="container">
-        <form class="form">
+        <form class="form" [formGroup]="loginForm">
             <img class="loginprofile" src="../../../../assets/undraw_pic_profile_re_7g2h.svg" alt="Image of a profile">
             <h1>Login</h1>
             <mat-form-field appearance="outline">
                 <mat-label>Email</mat-label>
-                <input matInput>
+                <input matInput formControlName="email">
+                <mat-error *ngIf="email.errors?.['required']">
+                  Email is required
+                </mat-error>
+                <mat-error *ngIf="email.errors?.['email']">
+                  Email must be valid
+                </mat-error>
                 <mat-icon matIconSuffix>alternate_email</mat-icon>
             </mat-form-field>
 
             <mat-form-field appearance="outline">
                 <mat-label>Enter your password</mat-label>
-                <input matInput [type]="hide ? 'password' : 'text'" autocomplete="off">
+                <input matInput [type]="hide ? 'password' : 'text'" autocomplete="off" formControlName="password">
+                <mat-error *ngIf="password.errors?.['required']">
+                  Password is required
+                </mat-error>
                 <mat-icon matIconSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
             </mat-form-field>
 
-            <h4 class="button">Login</h4>
+            <h4 class="button" (click)="login()">Login</h4>
 
             <p class="goregister">Doesn't have an account? Create one <span [routerLink]="'/auth/register'">here!</span></p>
         </form>

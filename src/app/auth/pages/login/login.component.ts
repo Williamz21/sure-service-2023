@@ -1,4 +1,5 @@
-import { Component, Input } from '@angular/core';
+import { Component } from '@angular/core';
+import {FormBuilder, FormGroup, Validators} from "@angular/forms";
 
 @Component({
   selector: 'app-login',
@@ -12,7 +13,21 @@ export class LoginComponent {
   number=0
   logo=this.images[0]
   info=this.text[0]
-  
+
+  loginForm: FormGroup=this.builder.group({
+    email: ['',[Validators.email,Validators.required]],
+    password: ['',Validators.required],
+  })
+
+  get email() { return this.loginForm.controls['email'];}
+  get password() { return this.loginForm.controls['password'];}
+
+  constructor(public builder:FormBuilder) {}
+
+  login(){
+    console.log(this.loginForm.value.password)
+  }
+
   rightChange(){
     this.number++;
     if(this.number>this.images.length-1)this.number=0;
