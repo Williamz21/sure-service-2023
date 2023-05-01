@@ -86,9 +86,29 @@
                       Passwords doesn't match
                     </mat-error>
                 </mat-form-field>
+                <div class="userType">
+                  <mat-form-field appearance="outline">
+                    <mat-label>Choose your user type</mat-label>
+                    <mat-select formControlName="typeUser" required>
+                      <mat-option value="ROLE_EMPLOYEE">Employee</mat-option>
+                      <mat-option value="ROLE_CLIENT">Client</mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="typeUser.errors?.['required']">You must make a selection</mat-error>
+                  </mat-form-field>
+
+                  <mat-form-field appearance="outline" *ngIf="typeUser.value=='ROLE_EMPLOYEE'">
+                    <mat-label>Choose a service</mat-label>
+                    <mat-select formControlName="typeService" required>
+                      <mat-option value=1>Electricity</mat-option>
+                      <mat-option value=2>Plumbing</mat-option>
+                      <mat-option value=3>Computer repair</mat-option>
+                    </mat-select>
+                    <mat-error *ngIf="typeService.errors?.['required']">You must make a selection</mat-error>
+                  </mat-form-field>
+                </div>
             </div>
 
-            <h4 class="button">Create account</h4>
+            <h4 class="button" (click)="register()">Create account</h4>
 
             <p class="goregister">Already have an account? Login <span [routerLink]="'/auth/login'">here!</span></p>
         </form>
